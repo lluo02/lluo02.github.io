@@ -27,3 +27,32 @@ To deploy the Docker container after it has been build, run
 > docker run -it --rm -p 9696:9696 enrollee-predict
 
 The project will run on **localhost:9696** once deployed.
+
+## Using the model
+
+Let's take a look at this sample employee.
+```
+enrollee = {
+    "enrollee_id": 11674,
+    "city": "city_83",
+    "city_development_index": 0.923,
+    "gender": "male",
+    "relevent_experience": "has_relevent_experience",
+    "enrolled_university": "no_enrollment",
+    "education_level": "masters",
+    "major_discipline": "stem",
+    "experience": "12",
+    "company_size": "1000-4999",
+    "company_type": "pvt_ltd",
+    "last_new_job": "2",
+    "training_hours": 18
+}
+```
+We can ask our model about this employee, like so:
+```
+response = requests.post('http://localhost:9696/predict', json=enrollee).json()
+
+> {'target': False, 'target_probability': 0.20765447616577148}
+```
+Our model has told us that this employee only has about a 20% chance of staying with our company.
+
