@@ -34,9 +34,13 @@ The project will run on **localhost:9696** once deployed.
 
 The model is created using XGBoost. There are three parameters I tune in the model's creation: 
 - The number of iterations to train over
+<img src="\images\num_iter.PNG">
 - Learning rate
+<img src="\images\eta.PNG">
 - Max depth of a tree
+<img src="\images\max_depth.PNG">
 - Min weight of a child
+<img src="\images\min_child_weight.PNG">
 
 The longer the model attempts to train itself for, the more likely it overfits. That is, the model adjusts itself too much to the training data that it can't measure anything else.
 The same thing can happen if the learning rate is too high, the trees are too deep, or if the weight of the children is too small.
@@ -70,3 +74,29 @@ response = requests.post('http://localhost:9696/predict', json=enrollee).json()
 ```
 Our model has told us that this employee only has about a 20% chance of staying with our company.
 
+Let's try another one.
+```
+enrollee = {
+    'enrollee_id': 31806,
+    'city': 'city_21',
+    'city_development_index': 0.624,
+    'gender': 'male',
+    'relevent_experience': 'no_relevent_experience',
+    'enrolled_university': 'no_enrollment',
+    'education_level': 'high_school',
+    'major_discipline': 0,
+    'experience': '0',
+    'company_size': 0,
+    'company_type': 'pvt_ltd',
+    'last_new_job': 'never',
+    'training_hours': 15
+}
+```
+```
+response = requests.post('http://localhost:9696/predict', json=enrollee).json()
+
+> {'target': True, 'target_probability': 0.7562177777290344}
+```
+This employee appears to have a 75% chance of staying with our company.
+
+By taking a look through some of their various parameters, we can conclude some things, such as that our company has a low likelihood of retention among experienced workers. Oops. Better work on that.
