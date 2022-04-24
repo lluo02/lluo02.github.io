@@ -8,6 +8,8 @@ The problem this dataset presents is training a model, based on the performance 
 
 Data: https://www.kaggle.com/arashnic/hr-analytics-job-change-of-data-scientists?select=aug_test.csv
 
+The data are preprocessed by standard normalization of columns, separation into training, validation, and test split, and the replacment of null values with the mode of their respective columns.
+
 ## **Virtual Environment**
 This project is built into a virtual environment using WSL 2.0 on Ubuntu 20.04.3. To build the virtual environment, the provided Pipfile contains the relevant dependencies. To build from scratch, do  
 
@@ -27,6 +29,18 @@ To deploy the Docker container after it has been build, run
 > docker run -it --rm -p 9696:9696 enrollee-predict
 
 The project will run on **localhost:9696** once deployed.
+
+## About the model
+
+The model is created using XGBoost. There are three parameters I tune in the model's creation: 
+- The number of iterations to train over
+- Learning rate
+- Max depth of a tree
+- Min weight of a child
+
+The longer the model attempts to train itself for, the more likely it overfits. That is, the model adjusts itself too much to the training data that it can't measure anything else.
+The same thing can happen if the learning rate is too high, the trees are too deep, or if the weight of the children is too small.
+The goal is to maximimize the performance of the model while avoiding extremes.
 
 ## Using the model
 
