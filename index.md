@@ -4,5 +4,5 @@ Hello! My name is Luke Luo, and I am a soon-to-be third year student at the Univ
 
 Check out one of my [past projects](/demo.md)!
 
-You can download my resume <a href="Luke_Luo_Resume.docx">here</a>.
+You can download my resume <a href="Luke Luo Resume.docx">here</a>.
 
