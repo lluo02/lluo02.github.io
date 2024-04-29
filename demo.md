@@ -1,6 +1,8 @@
+layout: page
+title: "Project Demo"
+permalink: /demo
 
-
-# Demo
+## Demo
 
 The problem this dataset presents is training a model, based on the performance of an individual in employee training, whether or not the said employee is likely to stay with the company or look for a new job. The dataset is imbalanced with about a 3:1 majority of 0 (Not looking for new job) to 1 (Looking for new job) entries.
 
