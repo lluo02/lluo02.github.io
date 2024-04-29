@@ -1,6 +1,4 @@
-layout: page
-title: "Project Demo"
-permalink: /demo
+
 
 # Demo
 
@@ -19,7 +17,6 @@ This project is built into a virtual environment using WSL 2.0 on Ubuntu 20.04.3
 To activate the virtual environment afterwards, run 
 
 > pipenv shell
-
 This project can also be deployed to a Docker container running on a Ubuntu 20.04.3 image using WSL 2.0. In order to build it, navigate to the directory that contains the Dockerfile and run
 
 > docker build -t enrollee-predict .
