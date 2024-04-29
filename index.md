@@ -1,6 +1,6 @@
 ## About me
 
-Hello! My name is Luke Luo, and I am a soon-to-be third year student at the University of Maryland, College Park. I major in Computer Science and Statistics and am currently looking independently into artificiall intelligence and applications such as neural networks and natural language processing.
+Hello! My name is Luke Luo, and I am a graduating senior at the University of Maryland, College Park. I major in Computer Science and Statistics specializing in AI and Computer Vision, seeking to gain professional experience in areas like computer vision, generative modeling, or product-driven machine learning with real-world data.
 
 Check out one of my [past projects](/demo.md)!
 
